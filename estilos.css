@@ -638,12 +638,26 @@ body {
     font-weight: 400;
 }
 
-.status {
-    font-size: 0.85rem;
+.status, status-eye {
     color: var(--primary-violet);
     background: rgba(139, 92, 246, 0.1);
-    padding: 0.2rem 0.8rem;
     border-radius: 12px;
+}
+
+.status {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.8rem;
+}
+
+.status-eye {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
+    margin-right: 2px;
+}
+
+.status-eye:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
 }
 
 .passion-list {
@@ -906,7 +920,7 @@ body {
     position: relative;
     width: 400px;
     height: 250px;
-    background: linear-gradient(145deg, var(--bg-primary), var(--bg-secondary));
+    background: linear-gradient(145deg, var(--text-primary), var(--text-secondary));
     border-radius: 15px 15px 5px 5px;
     padding: 15px 15px 25px 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
