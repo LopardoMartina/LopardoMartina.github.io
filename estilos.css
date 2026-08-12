@@ -1000,6 +1000,28 @@ body {
     line-height: 1.2;
 }
 
+.proyecto-badge {
+    display:inline-block;
+    align-self: flex-start;
+    background-color: var(--primary-violet);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: var(--font-secondary);
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.proyecto-tagline {
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    color: var(--primary-violet);
+    font-weight: 500;
+    margin-top: -0.5rem;
+}
+
 .proyecto-info p {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -1028,11 +1050,6 @@ body {
   transform: translateY(-2px);
 }
 
-.proyecto-button-github-tag,
-.proyecto-button-github-tag i {
-    display: none;
-}
-
 .proyecto-botones {
   display: flex;
   gap: 1rem; 
@@ -1051,7 +1068,6 @@ body {
   border-radius: 25px;
   font-weight: 600;
   transition: var(--transition-smooth);
-  align-self: flex-start;  
 }
 
 .proyecto-button:hover {
@@ -1087,6 +1103,7 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px var(--accent-violet);
 }
+
 
 /* trabajos academicos*/
 .proyectos-academicos {
@@ -1514,13 +1531,13 @@ body {
 
     .hero-subtitle {
         font-size: 0.75rem;
-        padding: 0 2rem;
+        padding: 0 0.5rem;
     }
     
     .hero-description {
         width: 80vw;
         max-width: 100%;
-        padding: 0 2rem;
+        padding: 0 0.5rem;
         white-space: normal;
         text-align: center;
         border: none;
@@ -1535,36 +1552,25 @@ body {
     /* navegación */
     .nav-container {
         padding: 1rem;
-        gap: 1rem;
     }
     
     .nav-link {
         padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
 
     /* Sobre mi */
     .about-content-wrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         gap: 2rem;
+        margin-bottom: 3rem;
     }
 
-    .about-text-section {
-        grid-area: title;
-    }
-    
     .about-details-grid {
-        display: grid;
         grid-template-columns: 1fr;
-    }
-
-    .about-image {
-        grid-area: image;
-        display: flex;
-        justify-content: flex-end;
     }
 
     .image-placeholder {
@@ -1577,12 +1583,8 @@ body {
         height: auto;
     }
 
-    .about-text-section .about-title {
-        margin-bottom: 0;
-    }
-
     .about-mission {
-        font-size: 14px;
+        font-size: 0.7rem;
     }
 
     .detail-card {
@@ -1592,37 +1594,35 @@ body {
 
 
     /* proyectos */
-    .proyecto-mockup {
+    /*.proyecto-mockup {
         display: none;
+    }*/
+
+    .compu-mockup {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .proyecto-info {
-        background: black;
+        background: var(--card-bg);
         border-radius: 20px;
         padding: 1.5rem;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .proyecto-info h3 {
+        margin-top: 5px;
+        color: var(--primary-violet);
     }
 
     .proyecto-item {
-        grid-template-columns: 2fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
         opacity: 1 !important;
         transform: translateX(0) !important;
     }
 
-    .proyecto-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    .proyecto-button, .proyecto-button-github{
-        display: none;
-    }
-
-    .proyecto-tags {
+    .proyecto-tags, .proyecto-botones {
         justify-content: center;
     }
 
@@ -1634,29 +1634,8 @@ body {
         text-align: center;
         font-size: 0.85rem;
         white-space: nowrap;
-    }
-/*
-    .proyecto-button-github-tag {
-        display: flex;
-        text-align: right;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        transition: var(--transition-smooth);
-        align-self: flex-start;  
-        font-size: 1.7rem;
-    }
-
-    .proyecto-button-github-tag:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px var(--accent-violet);
-    }
-*/
+    } 
+    
     .proyecto-info h3 {
         margin-top: 5px;
         color: var(--primary-violet);
@@ -1665,8 +1644,6 @@ body {
     .proyecto-info p {
         margin-bottom: 5px;
     }
-
-
 
     .stats-grid {
         grid-template-columns: repeat(3, 1fr);
