@@ -341,7 +341,7 @@ body {
         fill: transparent; /* Comienza sin relleno */
     }
     to {
-    fill: var(--text-head-primary); /* Termina con relleno blanco */
+    fill: var(--text-head-primary); /*termina con relleno blanco */
   }
 }
 
@@ -372,11 +372,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes blink {
-    0%, 50% { border-color: var(--text-head-secondary); }
-    51%, 100% { border-color: transparent; }
 }
 
 @keyframes bounce {
@@ -527,39 +522,6 @@ body {
     border-left: 3px solid var(--primary-violet);
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    text-align: center;
-}
-
-.stat-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: var(--transition-smooth);
-}
-
-.stat-item.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-violet);
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 0.5rem;
-}
-
 .about-details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -640,7 +602,7 @@ body {
     font-weight: 400;
 }
 
-.status, status-eye {
+.status, .status-eye {
     color: var(--primary-violet);
     background: rgba(139, 92, 246, 0.1);
     border-radius: 12px;
@@ -653,7 +615,7 @@ body {
 
 .status-eye {
     font-size: 0.7rem;
-    padding: 0.2rem 0.3rem;
+    padding: 0.2rem 0.5rem;
     margin-right: 2px;
 }
 
@@ -825,6 +787,7 @@ body {
 
 .skill-item:hover {
     background: rgba(139, 9, 246, 0.08);
+    transform: translateY(-3px);
 }
 
 .skill-item:hover i {
@@ -887,7 +850,7 @@ body {
 }
 
 .softskills-list li::before {
-  content: "✓";
+  content: "\2713";  /*signo check*/
   position: absolute;
   left: 1rem;
   top: 50%;
@@ -977,12 +940,17 @@ body {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .compu-screen img {
-        width: 100%;
-        height: auto;
-    }
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+}
 
 
 
@@ -990,7 +958,7 @@ body {
 .proyecto-info {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem
+    gap: 1rem
 }
 
 .proyecto-info h3 {
@@ -1000,24 +968,10 @@ body {
     line-height: 1.2;
 }
 
-.proyecto-badge {
-    display:inline-block;
-    align-self: flex-start;
-    background-color: var(--primary-violet);
-    color: var(--text-primary);
-    font-size: 0.75rem;
-    font-weight: 500;
-    font-family: var(--font-secondary);
-    padding: 0.3rem 0.9rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
 .proyecto-tagline {
     font-family: var(--font-secondary);
-    font-size: 0.95rem;
-    color: var(--primary-violet);
+    font-size: 0.8rem;
+    color: var(--primary-violet) !important;
     font-weight: 500;
     margin-top: -0.5rem;
 }
@@ -1032,11 +986,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
+    margin-top: 1rem;
 }
 
 .proyecto-tag {
     background: var(--primary-violet);
-    color: var(--text-primary);
+    color: white;
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -1044,9 +999,7 @@ body {
     transition: var(--transition-smooth);
 }
 
-.project-tag:hover {
-  background: var(--primary-violet);
-  color: white;
+.proyecto-tag:hover {
   transform: translateY(-2px);
 }
 
@@ -1061,7 +1014,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.8rem 2rem;
+  padding: 0.2rem 2rem;
   background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
   color: white;
   text-decoration: none;
@@ -1107,7 +1060,7 @@ body {
 
 /* trabajos academicos*/
 .proyectos-academicos {
-    max-width: 100px;
+    max-width: 1000px;
     margin: 6rem auto 0;
 }
 
@@ -1123,7 +1076,7 @@ body {
 .academico-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 .academico-card {
@@ -1238,7 +1191,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-header h3 {
@@ -1254,6 +1207,13 @@ body {
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+.timeline-place {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--primary-violet);
+    margin-bottom: 1.2rem;
 }
 
 .timeline-description {
@@ -1349,31 +1309,9 @@ body {
   color: var(--primary-violet);
 }
 
-.contact-button {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
-    color: white;
-    text-decoration: none;
-    border-radius: 15px;
-    transition: var(--transition-smooth);
-    font-weight: 500;
-}
-
-.contact-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-}
-
-.contact-button i {
-    font-size: 1.2rem;
-}
 
 
-
-/* Formulario */
+/* Formulario de contacto*/
 .contact-form {
     background: var(--card-bg);
     padding: 2rem;
@@ -1436,7 +1374,7 @@ body {
 .submit-button {
     width: 100%;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
+    background: var(--secondary-violet);
     color: white;
     border: none;
     border-radius: 15px;
@@ -1498,8 +1436,6 @@ body {
 
 
 
-
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
     :root {
@@ -1530,7 +1466,8 @@ body {
     }
 
     .hero-subtitle {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
+        margin-top: 3rem;
         padding: 0 0.5rem;
     }
     
@@ -1584,7 +1521,7 @@ body {
     }
 
     .about-mission {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .detail-card {
@@ -1594,10 +1531,6 @@ body {
 
 
     /* proyectos */
-    /*.proyecto-mockup {
-        display: none;
-    }*/
-
     .compu-mockup {
         width: 100%;
         max-width: 400px;
@@ -1634,11 +1567,6 @@ body {
         text-align: center;
         font-size: 0.85rem;
         white-space: nowrap;
-    } 
-    
-    .proyecto-info h3 {
-        margin-top: 5px;
-        color: var(--primary-violet);
     }
 
     .proyecto-info p {
