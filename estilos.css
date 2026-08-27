@@ -11,11 +11,11 @@
 
 :root {
     /* Colores para tema claro */
-    --light-bg-primary: #ffffff;
-    --light-bg-secondary: #e9e4db;
+    --light-bg-primary: #eae4ec60;
+    --light-bg-secondary: #d7c5e086;
     --light-text-primary: #0a0a0a;
     --light-text-secondary: #64748b;
-    --light-card-bg: #ece7de;
+    --light-card-bg: #ffffff;
     --light-border: rgba(139, 92, 246, 0.1);
     
     /* tema oscuro */
@@ -63,6 +63,8 @@
     --border-color: var(--dark-border);
     --text-head-primary: var(--dark-text-primary); 
     --text-head-secondary: var(--secondary-violet); 
+    --mockup-primary: #a27ae2d5;
+    --mockup-secondary: #6f3dc0da;
 }
 
 /* para el Tema claro */
@@ -74,7 +76,9 @@
     --card-bg: var(--light-card-bg);
     --border-color: var(--light-border);
     --text-head-primary: var(--accent-violet);
-    --text-head-secondary: var(--light-text-primary); 
+    --text-head-secondary: var(--light-text-primary);
+    --mockup-primary: #7f3de99a;
+    --mockup-secondary: #441392d0;
 }
 
 html {
@@ -260,7 +264,7 @@ body {
 .hero-subtitle {
     font-family: var(--font-secondary);
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-head-primary);
     margin-bottom: 0.8rem;
     animation: fadeInUp 1s ease forwards;
@@ -897,6 +901,7 @@ body {
     transform: translateY(0);
 }
 
+/* Proyectos - Compus */
 .proyecto-mockup {
     position: relative;
     display: flex;
@@ -904,15 +909,14 @@ body {
     align-items: center;
 }
 
-/* Proyectos - Compus */
 .compu-mockup {
     position: relative;
-    width: 400px;
-    height: 250px;
-    background: linear-gradient(145deg, var(--text-primary), var(--text-secondary));
+    width: 470px;
+    height: 310px;
+    background: linear-gradient(315deg, var(--mockup-secondary), var(--mockup-primary));
     border-radius: 15px 15px 5px 5px;
-    padding: 15px 15px 25px 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 20px 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
     transition: var(--transition-smooth);
 }
 
@@ -973,7 +977,7 @@ body {
     font-size: 0.8rem;
     color: var(--primary-violet) !important;
     font-weight: 500;
-    margin-top: -0.5rem;
+    margin-top: -1rem;
 }
 
 .proyecto-info p {
@@ -1058,6 +1062,8 @@ body {
 }
 
 
+
+
 /* trabajos academicos*/
 .proyectos-academicos {
     max-width: 1000px;
@@ -1065,18 +1071,18 @@ body {
 }
 
 .academico-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 600;
     color: var(--text-primary);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     position: relative;
 }
 
 .academico-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.8rem;
+    gap: 1.5rem;
 }
 
 .academico-card {
@@ -1489,6 +1495,8 @@ body {
     /* navegación */
     .nav-container {
         padding: 1rem;
+        gap: 0.8rem;
+        flex-wrap: wrap;
     }
     
     .nav-link {

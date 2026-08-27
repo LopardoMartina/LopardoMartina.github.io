@@ -21,7 +21,7 @@
         content="Automatización, desarrollo web y soluciones eficientes. ¡Conocé mi perfil profesional!">
     <meta property="og:image" content="ruta/a/una/imagen.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://LopardoMartina.github.io/">
+    <meta property="og:url" content="https://lopardomartina.github.io/">
 
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -127,6 +127,7 @@
         <div class="nav-container">
             <a href="#about" class="nav-link">Sobre mí</a>
             <a href="#skills" class="nav-link">Skills</a>
+            <a href="#proyectos" class="nav-link">Proyectos</a>
             <a href="#experience" class="nav-link">Experiencia</a>
             <a href="#contact" class="nav-link">Contacto</a>
         </div>
@@ -149,7 +150,7 @@
                         <div class="about-text-section">
                             <div class="about-description">
                                 <p class="about-intro-text">
-                                    Soy <span class="highlight-text">Martina</span>, <strong>python &amp; RPA 
+                                    Soy <span class="highlight-text">Martina</span>, <strong>Python &amp; RPA 
                                     Developer</strong> con dos años de experiencia desarrollando bots en producción 
                                     y soluciones orientadas a la eficiencia, la escabilidad y la automatización de
                                     procesos.
@@ -163,11 +164,9 @@
                                 </p>
                                 <p class="about-intro-text">
                                     Cuento con formación técnica como <strong>Programadora Web Junior</strong> y
-                                    actualmente me encuentro realizando una
-                                    <strong>diplomatura en Desarrollo Web Full Stack</strong> (JavaScript y React), lo
-                                    que me permite ampliar mi perfil hacia
-                                    la construcción de interfaces modernas, aplicaciones escalables y soluciones
-                                    centradas en el usuario.
+                                    tengo una <strong>diplomatura en Desarrollo Web Full Stack</strong> (JavaScript 
+                                    y React), lo que me permite ampliar mi perfil hacia la construcción de interfaces 
+                                    modernas, aplicaciones escalables y soluciones centradas en el usuario.
                                 </p>
                                 <p class="about-mission">
                                     Me caracterizo por mi <strong>capacidad analítica</strong>,
@@ -313,6 +312,7 @@
                                 <i class="devicon-nodejs-plain colored"></i>
                                 <span class="skill-name">Node.js</span>
                             </div>
+                        </div>
                     </article>
 
                     <!-- categoria Bases de datos -->
@@ -367,6 +367,7 @@
                             </div>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
@@ -400,13 +401,13 @@
                         <div class="proyecto-mockup">
                             <div class="compu-mockup">
                                 <div class="compu-screen">
-                                    <img src="img/gabi.png" alt="Interfaz de GABI">
+                                    <img src="img/interfaz_gabi.png" alt="Interfaz de GABI">
                                 </div>
                             </div>
                         </div>
                         <div class="proyecto-info">
                             <h3>GABI - Gestión Automatizada de Bots</h3>
-                            <p class="proyecto-tagline">Interfaz de monitoreo y orquestación de bots.</p>
+                            <p class="proyecto-tagline">Interfaz de orquestación de bots.</p>
                             <p>
                                 Aplicación de escritorio que centraliza la ejecución y el monitoreo de bots RPA. 
                                 Cuenta con un <strong>log de ejecución en vivo</strong>, controles de <strong>iniciar 
@@ -416,7 +417,7 @@
                             </p>
                             <p>
                                 Incluye un <strong>notificador por email</strong> que avisa automaticamente cuando
-                                un bot finaliza su ejecución. La configuración se lee desde un archivo <strong>setting.json</strong>, 
+                                un bot finaliza su ejecución. La configuración se lee desde un archivo <strong>settings.json</strong>, 
                                 lo que mantiene los parametros ordenados, versionables y separados del codigo.
                             </p>
                             <div class="proyecto-tags">
@@ -426,7 +427,7 @@
                                 <span class="proyecto-tag">Automatización</span>
                             </div>
                             <div class="proyecto-botones">
-                                <a href="https://github.com/LopardoMartina/.." class="proyecto-button-github" 
+                                <a href="https://github.com/lopardo-martina/Interfaz_GABI" class="proyecto-button-github" 
                                 aria-label="Ver codigo en GitHub" target="_blank">
                                 <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 </a>
@@ -440,7 +441,7 @@
                         <div class="proyecto-mockup">
                             <div class="compu-mockup">
                                 <div class="compu-screen">
-                                    <img src="img/ylnutri.png" alt="Vista previa de YLNutri">
+                                    <img src="img/yl-nutri.png" alt="Vista previa de YLNutri">
                                 </div>
                             </div>
                         </div>
@@ -538,10 +539,13 @@
                             <div class="academico-content">
                                 <h4>Lexer</h4>
                                 <p>
-                                    Analizador léxico desarrollado......
+                                    Analizador léxico en Python que descompone código fuente en tokens (palabras
+                                    reservadas, números, cadenas, operadores e identificadores) a partir de un conjunto
+                                    de autómatas finitos deterministas. Implementa la estrategia de <em>maximal
+                                    munch</em> para elegir siempre el token válido más largo.
                                 </p>
-                                <a href="https://github.com/...." class="academico-link" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="https://github.com/lopardo-martina/Lexer.git" class="academico-link" target="_blank">
+                                    <i class="fa-brands fa-github"></i> Ver código
                                 </a>
                             </div>
                         </article>
@@ -552,10 +556,13 @@
                             <div class="academico-content">
                                 <h4>Programación Orientada a Objetos</h4>
                                 <p>
-                                    Tp .....
+                                    Sistema en Python para calcular el costo de envíos de una empresa de logística,
+                                    modelado con clases (paquete y envío) y aplicando peso volumétrico, recargos
+                                    escalonados y multiplicadores por destino. Incluye <strong>tests unitarios</strong>
+                                    de la funcionalidad.
                                 </p>
-                                <a href="https://github.com/...." class="academico-link" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="https://github.com/lopardo-martina/tp-objetos.git" class="academico-link" target="_blank">
+                                    <i class="fa-brands fa-github"></i> Ver código
                                 </a>
                             </div>
                         </article>
@@ -623,7 +630,7 @@
                                     <p>martulopardo0@gmail.com</p>
                                 </div>
                             </a>
-                            <a href="https://github.com/LopardoMartina" class="contact-card" target="_blank">
+                            <a href="https://github.com/lopardo-martina" class="contact-card" target="_blank">
                                 <div class="contact-details">
                                     <i class="fab fa-github"></i>
                                     <h4>GitHub</h4>
@@ -681,7 +688,7 @@
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados. Diseñado con pasión por la tecnología.</p>
+            <p>&copy; 2025 Martina Lopardo. Diseñado con pasión por la tecnología.</p>
             <a href="mailto:martulopardo0@gmail.com" class="footer-email">martulopardo0@gmail.com</a>
         </div>
     </footer>
