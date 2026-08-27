@@ -11,33 +11,33 @@
 
 :root {
     /* Colores para tema claro */
-    --light-bg-primary: #eae4ec60;
-    --light-bg-secondary: #d7c5e086;
+    --light-bg-primary: #f7f7fb;
+    --light-bg-secondary: #eeedf5;
     --light-text-primary: #0a0a0a;
     --light-text-secondary: #64748b;
     --light-card-bg: #ffffff;
-    --light-border: rgba(139, 92, 246, 0.1);
+    --light-border: rgba(91, 62, 145, 0.16);
     
     /* tema oscuro */
-    --dark-bg-primary: #0a0a0a;
-    --dark-bg-secondary: #1a1a1a;
+    --dark-bg-primary: #0d0d12;
+    --dark-bg-secondary: #14141c;
     --dark-text-primary: #ffffff;
     --dark-text-secondary: #a1a1aa;
-    --dark-card-bg: #1f1f23;
-    --dark-border: rgba(139, 92, 246, 0.2);
+    --dark-card-bg: #191923;
+    --dark-border: rgba(167, 139, 250, 0.2);
     
     /*violetas */
-    --primary-violet: #8b5cf6;
-    --secondary-violet: #a78bfa;
-    --tertiary-violet: #c4b5fd;
+    --tertiary-violet: #8b5cf6;
+    --primary-violet: #a78bfa;
+    --secondary-violet: #c4b5fd;
     --accent-violet: #6d28d9;
     
     /* Tipografía */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-secondary: 'Courier New', Courier, monospace;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-secondary: 'JetBrains Mono', 'Courier New', monospace;
 
     /* Espaciado */
-    --section-padding: 5rem 0;
+    --section-padding: clamp(4rem, 9vw, 8rem) 0;
     --container-padding: 0 2rem;
     
     /* Transiciones */
@@ -205,14 +205,15 @@ body {
 /* Header Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(115deg, var(--bg-primary) 10%, var(--bg-primary) 30%, var(--accent-violet) 180%);
+    background: var(--bg-primary);
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 30vh;
+    padding: 30vh 1.5vh 12vh;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero::before {
@@ -233,13 +234,29 @@ body {
   }
 }
 
+.hero::after {
+    content: '</>';
+    position: absolute;
+    right: 4vw;
+    bottom: 10vh;
+    color: var(--primary-violet);
+    font: 700 clamp(2rem, 8vw, 6rem)/1 var(--font-secondary);
+    opacity: 0.12;
+}
+
 .hero-content {
     text-align: center;
     z-index: 2;
     position: relative;
-    width: 75vw;
+    width: min(900px, 100%);
     height: auto;
-    max-height: 100px;
+    max-height: none;
+}
+
+.hero-text svg {
+    width: min(850px, 95vh);
+    height: auto;
+    margin-bottom: 2rem;
 }
 
 #nombre_path {
@@ -268,6 +285,7 @@ body {
     color: var(--text-head-primary);
     margin-bottom: 0.8rem;
     animation: fadeInUp 1s ease forwards;
+    letter-spacing: -0.05px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -306,8 +324,10 @@ body {
     font-family: var(--font-secondary);
     font-size: 1.1rem;
     font-weight: 300;
-    color: var(--text-head-secondary);
+    color: var(--text-secondary);
     line-height: 1.6;
+    max-width: 66ch;
+    margin: 0 auto;
 }
 
 .scroll-indicator {
@@ -391,7 +411,7 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(var(--bg-primary), 0.95);
+    background: color-mix(in srgb, var(--bg-primary) 88%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: var(--z-sticky);
@@ -401,19 +421,22 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-block: 0.75rem;
     gap: 2rem;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
+    font-size: 0.9rem;
     font-weight: 500;
     font-family: var(--font-secondary);
+    letter-spacing: 0.03em;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 12px;
     transition: var(--transition-smooth);
     position: relative;
 }
@@ -437,8 +460,10 @@ body {
 }
 
 .section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-family: var(--font-secondary);
     font-weight: 700;
+    letter-spacing: -0.4px;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-primary);
@@ -451,8 +476,8 @@ body {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
+    width: 42px;
+    height: 2px;
     background: linear-gradient(90deg, var(--primary-violet), var(--secondary-violet));
     border-radius: 2px;
 }
@@ -494,9 +519,9 @@ body {
 }
 
 .title-line.highlight {
-    background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: var(--primary-violet);
     background-clip: text;
     position: relative;
 }
@@ -533,11 +558,17 @@ body {
     margin-top: 3rem;
 }
 
+.detail-card, .skill-category,
+.softskills-list li, .proyecto-info,
+.contact-card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+}
+
 .detail-card {
     background: var(--card-bg);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
     transition: var(--transition-smooth);
     opacity: 0;
     transform: translateX(-50px);
@@ -557,15 +588,15 @@ body {
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, var(--primary-violet), var(--secondary-violet));
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .card-icon i {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     color: white;
 }
 
@@ -639,14 +670,15 @@ body {
     background: rgba(139, 92, 246, 0.1);
     color: var(--primary-violet);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: 500;
+    font-family: var(--font-secondary);
     transition: var(--transition-smooth);
 }
 
 .passion-tag:hover {
-    background: var(--primary-violet);
+    background: var(--tertiary-violet);
     color: white;
     transform: translateY(-2px);
 }
@@ -739,8 +771,6 @@ body {
 .skill-category {
     background: var(--card-bg);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
     transition: var(--transition-smooth);
 }
 
@@ -844,8 +874,6 @@ body {
 .softskills-list li {
   background: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
   position: relative;
   padding-left: 3rem;
   font-size: 1.1rem;
@@ -914,7 +942,7 @@ body {
     width: 470px;
     height: 310px;
     background: linear-gradient(315deg, var(--mockup-secondary), var(--mockup-primary));
-    border-radius: 15px 15px 5px 5px;
+    border-radius: 10px;
     padding: 10px 10px 20px 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
     transition: var(--transition-smooth);
@@ -960,6 +988,7 @@ body {
 
 /* Proyecto info */
 .proyecto-info {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem
@@ -994,12 +1023,13 @@ body {
 }
 
 .proyecto-tag {
-    background: var(--primary-violet);
-    color: white;
+    background: color-mix(in srgb, var(--primary-violet) 16%, transparent);
+    color: var(--primary-violet);
     padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: 500;
+    font-family: var(--font-secondary);
     transition: var(--transition-smooth);
 }
 
@@ -1311,7 +1341,7 @@ body {
 }
 
 .contact-card i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary-violet);
 }
 
@@ -1443,6 +1473,14 @@ body {
 
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-text svg {
+        width: min(650px, 92vh);
+        height: auto;
+        margin-bottom: 2rem;
+    }   
+}
+
 @media (max-width: 768px) {
     :root {
         --section-padding: 3rem 0;
@@ -1456,11 +1494,17 @@ body {
     .theme-toggle {
         bottom: 1rem;
         right: 1rem;
-        width: 50px;
-        height: 50px;
+        width: 1.5rem;
+        height: 1.5rem;
     }
     
     /* hero */
+    .hero-text svg {
+        width: min(450px, 92vh);
+        height: auto;
+        margin-bottom: 2rem;
+    }   
+
     .hero_content {
         width: 70vw;
         height: auto;
@@ -1495,11 +1539,12 @@ body {
     /* navegación */
     .nav-container {
         padding: 1rem;
-        gap: 0.8rem;
-        flex-wrap: wrap;
+        gap: 0.3rem;
+        justify-content: center;
     }
     
     .nav-link {
+        padding-inline: 0.55rem;
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
@@ -1620,7 +1665,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    
+    .hero-text svg {
+        width: min(300px, 92vh);
+        height: auto;
+        margin-bottom: 2rem;
+    }   
+
     .section-title {
         font-size: 1.8rem;
     }
