@@ -1,10 +1,3 @@
-// Animaciones de scroll
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-
 
 // Efecto de los puntitos en el hero
 function createPuntos() {
@@ -43,7 +36,8 @@ themeToggle.addEventListener('click', () => {
 // Carga tema guardado
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    body.className = savedTheme + '-theme';
+    body.classList.remove('dark-theme', 'light-theme');
+    body.classList.add(savedTheme + '-theme');
 
     // Animación de las barras de skills al hacer scroll
     const observerOptions = {

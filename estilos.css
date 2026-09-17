@@ -7,16 +7,14 @@
     box-sizing: border-box;
 }
 
-
-
 :root {
     /* Colores para tema claro */
-    --light-bg-primary: #f7f7fb;
+    --light-bg-primary: #dfdfee;
     --light-bg-secondary: #eeedf5;
     --light-text-primary: #0a0a0a;
     --light-text-secondary: #64748b;
     --light-card-bg: #ffffff;
-    --light-border: rgba(91, 62, 145, 0.16);
+    --light-border: rgba(91, 62, 145, 0.2);
     
     /* tema oscuro */
     --dark-bg-primary: #0d0d12;
@@ -202,6 +200,8 @@ body {
 
 
 
+
+
 /* Header Hero Section */
 .hero {
     height: 100vh;
@@ -330,21 +330,7 @@ body {
     margin: 0 auto;
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: -52vh;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--secondary-violet);
-    animation: bounce 2s infinite;
-    font-size: 1.5rem;
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .scroll-indicator {
-    animation: none;
-  }
-}
 
 
 
@@ -369,12 +355,6 @@ body {
   }
 }
 
-@keyframes letterDrop {
-    to {
-        opacity: 1;
-        transform: translateY(0) rotateX(0);
-    }
-}
 
 @keyframes fadeInUp {
     from {
@@ -486,6 +466,8 @@ body {
 
 
 
+
+
 /* Sección Sobre mí */
 .about-section {
     min-height: 100vh;
@@ -496,14 +478,6 @@ body {
 
 .about-hero {
     width: 100%;
-}
-
-.about-content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 250px;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 9rem;
 }
 
 .about-title {
@@ -524,6 +498,14 @@ body {
     color: var(--primary-violet);
     background-clip: text;
     position: relative;
+}
+
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 9rem;
 }
 
 .about-description {
@@ -562,10 +544,12 @@ body {
 .softskills-list li, .proyecto-info,
 .contact-card {
     border: 1px solid var(--border-color);
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
     border-radius: 12px;
 }
 
+
+/* Formacion academica*/
 .detail-card {
     background: var(--card-bg);
     padding: 2rem;
@@ -660,6 +644,8 @@ body {
     transform: translateY(-2px);
 }
 
+
+/*intereses*/
 .passion-list {
     display: flex;
     flex-wrap: wrap;
@@ -683,6 +669,7 @@ body {
     transform: translateY(-2px);
 }
 
+/*imagen del robotito*/
 .about-image {
     display: flex;
     justify-content: center;
@@ -754,6 +741,8 @@ body {
 [data-aos-delay="100"].animate { transition-delay: 0.1s; }
 [data-aos-delay="200"].animate { transition-delay: 0.2s; }
 [data-aos-delay="300"].animate { transition-delay: 0.3s; }
+
+
 
 
 
@@ -857,6 +846,8 @@ body {
 
 
 
+
+
 /* Habilidades personales */
 .softskills-section {
     background: var(--bg-primary);
@@ -896,6 +887,8 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
 }
+
+
 
 
 
@@ -1121,7 +1114,7 @@ body {
     background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08);
+    box-shadow: 0 4px 30px rgba(139, 92, 246, 0.4);
     transition: var(--transition-smooth);
 }
  
@@ -1147,6 +1140,8 @@ body {
     font-size: 1.1rem;
     color: var(--text-primary);
     margin-bottom: 0.4rem;
+    line-height: 1.3;
+    word-break: break-word;
 }
  
 .academico-content p {
@@ -1214,7 +1209,7 @@ body {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.25);
     transition: var(--transition-smooth);
 }
 
@@ -1237,7 +1232,7 @@ body {
 }
 
 .timeline-duration {
-    background: linear-gradient(90deg, var(--primary-violet), var(--secondary-violet));
+    background: var(--primary-violet);
     color: white;
     padding: 0.3rem 1rem;
     border-radius: 20px;
@@ -1265,7 +1260,7 @@ body {
 }
 
 .skill-tag {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(139, 92, 246, 0.25);
     color: var(--primary-violet);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -1275,12 +1270,16 @@ body {
 
 
 
+
+
+
 /* Sección Contacto */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
     align-items: start;
 }
@@ -1300,17 +1299,17 @@ body {
 
 .contact-cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
   justify-content: center;
   margin-top: 3rem;
 }
 
 .contact-card {
-  flex: 1 1 200px;
   display: flex;
   gap: 1rem;
   align-items: center;
+  width: 100%;
   background: var(--card-bg);
   padding: 1rem 2rem;
   border-radius: 15px;
@@ -1318,6 +1317,7 @@ body {
   text-decoration: none;
   color: var(--text-primary);
   transition: var(--transition-smooth);
+  overflow: hidden;
 }
 
 .contact-card:hover {
@@ -1331,8 +1331,13 @@ body {
     gap: 0.5rem;
 }
 
-.contact-details p, h4, i {
+.contact-details p,
+.contact-details h4,
+.contact-details i {
     margin: 0;
+}
+
+.contact-details h4 {
     white-space: nowrap; 
 }
 
@@ -1341,8 +1346,15 @@ body {
 }
 
 .contact-card i {
-  font-size: 1.5rem;
-  color: var(--primary-violet);
+    font-size: 1.5rem;
+    color: var(--primary-violet);
+}
+
+.contact-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 
@@ -1353,6 +1365,7 @@ body {
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+    height: 100%;
 }
 
 .form-group {
@@ -1376,7 +1389,7 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-violet);
+    border-color: var(--secondary-violet);
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
@@ -1500,10 +1513,6 @@ body {
         --container-padding: 0 1rem;
     }
 
-    .container {
-        margin: 1rem;
-    }
-
     .theme-toggle {
         bottom: 1rem;
         right: 1rem;
@@ -1518,8 +1527,7 @@ body {
         margin-bottom: 2rem;
     }   
 
-    .hero_content {
-        width: 80vw;
+    .hero-content {
         height: auto;
         max-height: 120px;
     }
@@ -1634,9 +1642,11 @@ body {
         font-size: 0.85rem;
         white-space: normal;
     }
+
     .proyecto-info p {
         margin-bottom: 5px;
     }
+
 
     /* proyecto academicos*/
     .proyectos-academicos {
@@ -1644,10 +1654,12 @@ body {
         max-width: 100%;
         margin-top: 3rem;
     }
+
     .academico-grid {
         grid-template-columns: minmax(0, 1fr);
         width: 100%;
     }
+
     .academico-card {
         min-width: 0;
         width: 100%;
@@ -1655,42 +1667,37 @@ body {
         gap: 0.75rem;
         align-items: flex-start;
     }
+
     .academico-content {
         min-width: 0;
         overflow-wrap: anywhere;
     }
+
     .academico-content h4,
     .academico-content p {
         overflow-wrap: anywhere;
     }
+
     .academico-icon {
-        width: 40px;
-        height: 40px;
-        flex-basis: 40px;
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        flex-shrink: 0;
+        font-size: 1rem;
     }
 
-    
-    .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-    
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
-    .skill-progress {
-        height: 100%;
-        background: linear-gradient(90deg, var(--primary-violet), var(--secondary-violet));
-        border-radius: 4px;
-        width: 0;
-        transition: width 2s ease-in-out;
-    }
+    
+
 
     /*contacto*/
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        width: 100%;
     }
     
     .timeline-item {
@@ -1708,6 +1715,7 @@ body {
         text-align: center;
     }
 }
+
 
 @media (max-width: 480px) {
     .hero-text svg {
@@ -1739,11 +1747,6 @@ body {
         padding: 0.3rem 0.6rem;
         font-size: 0.85rem;
     }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
 
     .proyecto-info h3 {
         font-size: 1.3rem;
@@ -1756,31 +1759,6 @@ body {
     .proyecto-tag {
         font-size: 0.5rem;
         padding: 0.2rem 0.5rem;
-    }
-}
-
-
-
-/* Animaciones adicionales */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
 
@@ -1848,5 +1826,3 @@ body {
 .dark-theme .particle {
     background-color: #916cff; 
 }
-
-
